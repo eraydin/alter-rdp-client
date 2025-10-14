@@ -59,6 +59,7 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="14"/>
                     <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
                     <RowDefinition Height="70"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -106,12 +107,21 @@
                          Style="{StaticResource DefaultTextBoxStyle}"
                          Tag="User name"
                          Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <!-- Password -->
+                <Image Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="20" Source="{StaticResource SegoeFluentIcon_e77b_Contact_Black}"/>
+                <TextBox x:Name="PasswordTextBox"
+                         Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="11" Padding="6,0,6,0" Margin="0,4,0,4"
+                         TabIndex="3" VerticalContentAlignment="Center"
+                         Style="{StaticResource DefaultTextBoxStyle}"
+                         Tag="Password"
+                         Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <!-- Connection title -->
-                <Image Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="20" Source="{StaticResource SegoeFluentIcon_e932_Label_Black}"/>
+                <Image Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="20" Source="{StaticResource SegoeFluentIcon_e932_Label_Black}"/>
                 <TextBox x:Name="ConnectionTitleTextBox"
-                         Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="12" Padding="6,0,6,0" Margin="0,4,0,4"
-                         TabIndex="3" VerticalContentAlignment="Center"
+                         Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="12" Padding="6,0,6,0" Margin="0,4,0,4"
+                         TabIndex="4" VerticalContentAlignment="Center"
                          Style="{StaticResource DefaultTextBoxStyle}"
                          Tag="Title (optional)"
                          Text="{Binding ConnectionTitle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -125,9 +135,9 @@
                 <!-- Local resource: Local devices -->
 
                 <!-- Connect button -->
-                <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="12" Padding="0,10,0,10" Margin="0,0,0,0"
+                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="12" Padding="0,10,0,10" Margin="0,0,0,0"
                         Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                        TabIndex="4" IsDefault="True"
+                        TabIndex="5" IsDefault="True"
                         Style="{StaticResource DefaultButtonStyle}"
                         Command="{Binding ConnectToRemoteComputerCommand, Mode=OneTime}"
                         Content="Connect"/>

@@ -36,6 +36,8 @@ namespace MsRdcAx
         public int RemotePort { get; set; }
 
         public string UserName { get; set; } = string.Empty;
+        
+        public string Pwd { get; set; } = string.Empty;
 
         public int DesktopWidth { get; set; } = 0;
 
@@ -203,6 +205,7 @@ namespace MsRdcAx
             _axMsRdpClient.Server = RemoteComputer;
             _axMsRdpClient.AdvancedSettings2.RDPPort = RemotePort;
             _axMsRdpClient.UserName = UserName;
+            _axMsRdpClient.AdvancedSettings2.ClearTextPassword = Pwd;
             _axMsRdpClient.AdvancedSettings9.EnableCredSspSupport = true;
         }
 

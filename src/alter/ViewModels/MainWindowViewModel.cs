@@ -96,6 +96,11 @@ namespace AlterApp.ViewModels
         [NotifyPropertyChangedFor(nameof(WindowTitle))]
         [NotifyCanExecuteChangedFor(nameof(ConnectToRemoteComputerCommand))]
         private string _userName = string.Empty;
+        
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(WindowTitle))]
+        [NotifyCanExecuteChangedFor(nameof(ConnectToRemoteComputerCommand))]
+        private string _password = string.Empty;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(WindowTitle))]
@@ -189,6 +194,7 @@ namespace AlterApp.ViewModels
             RdpClientHost.RemoteComputer = RemoteComputer.Trim();
             RdpClientHost.RemotePort = int.Parse(RemotePort.Trim());
             RdpClientHost.UserName = UserName.Trim();
+            RdpClientHost.Pwd = Password.Trim();
             RdpClientHost.DesktopWidth = (int)RdpClientHostWidth;
             RdpClientHost.DesktopHeight = (int)RdpClientHostHeight;
             RdpClientHost.Connect();
